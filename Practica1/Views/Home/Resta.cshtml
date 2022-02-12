@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>CALCULADORA</h1>
+
+<form asp-controller="Home" asp-action="Resta" class="formulario">
+    <div class="card">
+    <label>Number 1:</label>
+    @if(ViewBag.Numbers1==0)
+    {
+        <input type="number" placeholder="enter a number" name="number1" class="form-control" min="0" max="10"/>
+    }
+    else
+    {
+        <input type="number" placeholder="enter a number" name="number1" value="@ViewBag.Numbers1" class="form-control" min="0" max="10"/>
+    }
+    <br />
+
+    <label>Number 2:</label>
+    @if(ViewBag.Numbers1==0)
+    {
+        <input type="text" placeholder="enter a number" name="number2" class="form-control" min="0" max="10"/>
+    }
+    else
+    {
+        <input type="text" placeholder="enter a number" name="number2" value="@ViewBag.Numbers2" class="form-control" min="0" max="10"/>
+    }
+    <br />
+
+    <button class="btn btn-warning">Restar</button> 
+    </div>
+    <br />
+    <div class="resultView">
+    <label>Result:</label>
+    @if(ViewBag.VariableAEnviar==0)
+    {
+        <label>Ingrese valores operables.</label>
+    }
+    else
+    {
+        <label>@ViewBag.VariableAEnviar</label>
+    }
+    </div>
+</form>
